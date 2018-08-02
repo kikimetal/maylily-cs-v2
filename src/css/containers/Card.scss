@@ -11,12 +11,16 @@
   box-shadow: 0 10px 50px 0 var(--shadow);
   overflow: hidden;
 
-  transition: all var(--ease-out-back) 0.4s;
+  transform-origin: center;
+  transition: all ease 1s;
+
+  --opacity: 0.8;
 
   &:hover{
-    transform-origin: center;
-    width: 88%;
-    padding-top: 107%;
+    transition: all var(--ease-out-back) 0.4s;
+    width: 92%;
+    padding-top: 114%;
+    --opacity: 1;
   }
 
   .image{
@@ -25,7 +29,8 @@
     left: 0;
     right: 0;
     bottom: auto;
-    height: 60%;
+    height: 75%;
+    z-index: 1;
   }
 
   .words{
@@ -34,8 +39,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 40%;
-    padding: 3% 5%;
+    height: 25%;
+    padding-left: 0.3em;
+    padding-bottom: 0.6em;
 
     display: flex;
     flex-flow: column;
@@ -43,18 +49,37 @@
     align-items: flex-start;
 
     background: var(--primary);
-    color: rgba(255, 255, 255, 0.8);
+    color: white;
+    z-index: 2;
+
+    *{
+      opacity: var(--opacity);
+    }
 
     .word{
       display: block;
       font-size: 1em;
       font-weight: bold;
       line-height: 1.1;
+      transform: translateY(-0.5em);
+      text-shadow: 0 3px 10px var(--shadow);
     }
+
     .subWords{
       display: block;
       font-size: 0.5em;
-      line-height: 2;
+      line-height: 1;
+      transform: translateY(-0.5em);
     }
-  }
+
+    .arrow{
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 0.4em;
+      bottom: 0;
+      margin: auto;
+      width: 0.2em;
+    }
+  } // .words
 }

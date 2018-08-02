@@ -18,6 +18,7 @@ const Card = props => {
           ))
         }
         <span className="subWords">{props.subWords}</span>
+        <img className="arrow" src={urljoin(props.assetsPath, "img/arrow-white-right.png")} />
       </div>
     </div>
   )

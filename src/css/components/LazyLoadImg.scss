@@ -34,23 +34,18 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    // background: #fafafa;
-    // background: #333;
-    // color: #444;
-    background: linear-gradient(135deg, #222, #444);
-    color: #777;
-    font-size: 23px;
-    font-weight: lighter;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: rgba(250, 250, 250, 0.7);
+
+    font-size: 24rem;
+    font-weight: normal;
     z-index: 1;
     pointer-events: none;
-    // border: 5px solid #111;
-    // box-shadow: 0 0 7px 0 #222 inset;
 
     &.hide{
       opacity: 0;
       visibility: hidden;
-      // transition: 0.4s ease 0.6s;
-      transition: 0.4s ease 2s;
+      transition: 0.4s ease 1.3s;
     }
   }
 }
