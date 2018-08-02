@@ -2,9 +2,10 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-html{
+:root{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   -webkit-text-size-adjust: 100%;
@@ -14,10 +15,21 @@ html{
 
   background: #fff;
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
-  font-size: 16px;
+
+  font-size: 1px; /* rem基準値 */
   line-height: 1;
   vertical-align: baseline;
+  font-family:
+    'Helvetica Neue', /* Macの欧文 (OS X 10.10以前) */
+    'Segoe UI',       /* Windowsの欧文 */
+    YuGothicM,        /* Windows8.1以上は游ゴシック */
+    YuGothic,         /* Macの游ゴシック */
+    Meiryo,           /* 游ゴシックが入っていないWindows */
+    sans-serif;
+}
+
+body{
+  font-size: 16rem;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -25,17 +37,8 @@ div, p, section, article, aside{
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6, strong, b{
+strong, b{
   font-weight: bold;
-}
-h1{
-  font-size: 160%;
-}
-h2{
-  font-size: 140%;
-}
-h3{
-  font-size: 120%;
 }
 
 ul, ol{

@@ -8,11 +8,3 @@ export default class ScrollToTopOnMount extends React.Component {
     return null
   }
 }
-
-// import { animateScroll } from "react-scroll"
-// animateScroll.scrollToTop({
-//   smooth: true,
-//   duration: 200,
-// })
-// window.pageYOffset
-// document.querySelector(".animated-switch-wrapper").getBoundingClientRect().top

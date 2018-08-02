@@ -1,32 +1,29 @@
 .Menu{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: auto;
-  bottom: auto;
   color: #000;
+  pointer-events: none;
+  z-index: 99999;
 
   .Btn{
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    pointer-events: auto;
 
-    svg.svg-inline--fa{
-      margin: 0 0.3em;
-      margin-left: -0.4em;
-    }
+    // svg.svg-inline--fa{
+    //   margin: 0 0.3em;
+    //   margin-left: -0.4em;
+    // }
   }
 
   a.active .Btn{
     // react-router -> NavLink で 現在ルートの a に .active が付く。
     opacity: 0.5;
     pointer-events: none;
-    background: #eee;
+    // background: #eee;
+    background: transparent;
     cursor: default;
   }
 
   &.sm{
     width: 100%;
-    font-size: 1rem;
-    font-family: Arial;
 
     .Btn{
       margin: 1px;
@@ -35,14 +32,34 @@
     }
 
     .menu-switch{
-      position: absolute;
-      top: 0;
+      position: fixed;
+      top: auto;
+      left: 0;
       right: 0;
-      font-size: 38px;
+      bottom: 0; // top ではなく bottom に標準合わせ(モバイルgoogle の挙動に対応)
+
+      // テストここから
+      // pointer-events: none;
+      position: fixed;
+      left: 0;
+      // z-index: 1000;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      // -webkit-transition: all .5s;
+      // transition: all .5s;
+      // background: rgba(250, 200, 200, 0.4);
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      // ここまで
+
+      // font-size: 38px;
       color: var(--kiki-pink);
-      padding: 20px;
+
       cursor: pointer;
       z-index: 3;
+      pointer-events: none;
     }
 
     .sort-switch{
@@ -71,13 +88,18 @@
       justify-content: center;
       align-items: center;
       position: fixed;
-      top: 0;
+      top: -30vh;
       left: 0;
-      right: 0;
+      // right: 0;
+      width: 100%;
+      // bottom: 0;
+      height: 150vh;
       // height: HeightTransitionToFull
-      background: white;
-      transition: 0.4s ease;
+      background: #333;
+      color: lightgrey;
+      transition: all 0.4s ease;
       z-index: 2;
+      pointer-events: auto;
 
       .link-list{
         display: flex;
@@ -98,7 +120,8 @@
           @for $i from 1 through 6 {
             &-item:nth-child(#{$i}) {
               animation: slide-in ease both;
-              animation-duration: $i * 0.4s;
+              // animation-duration: $i * 0.4s;
+              animation-duration: $i * 0.3s;
               animation-delay: $i * 0.04s;
               @keyframes slide-in{
                 from{
@@ -115,20 +138,54 @@
         }
       }
     }
-  }
+  } // .sm
 
   &.md{
 
+    position: fixed;
     top: 0;
     left: 0;
-    right: 1px;
-    bottom: auto;
-    background: white;
-    border-bottom: 1px solid #eee;
+    right: 0;
+    width: 100%;
+    height: 60px;
 
-    .container{
+
+    .container-left,
+    .container-right{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: auto;
+
+      width: 16vw;
+      height: 100%;
+
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-right{
+      top: 0;
+      left: auto;
+      right: 0;
+    }
+
+    .container{ // .md
+      // position: fixed;
+      // top: 0;
+      // left: 0;
+      // right: 0;
+      // right: auto;
+      // bottom: auto;
+      background: lightgrey;
+      // border-bottom: 1px solid #eee;
+      box-shadow: 0 0 4px 0 rgba(0,0,0,0.2);
+
       width: 100%;
-      height: auto;
+      // height: auto;
+      // height: 60px;
+      height: 100%;
 
       display: flex;
       flex-flow: row wrap;
@@ -136,7 +193,6 @@
       justify-content: center;
       // justify-content: flex-start;
       align-items: center;
-      font-size: 1.2rem;
     }
 
     .link-list{

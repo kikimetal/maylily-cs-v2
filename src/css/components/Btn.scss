@@ -5,12 +5,14 @@
 
   min-width: 160px;
   padding: 0.8em calc(1em + 2vw);
-  background: var(--kiki-pink);
+  background: var(--cvl-red);
   color: white;
 
-  border: 1px solid var(--kiki-pink);
-  border-radius: 2em;
-  font-size: 1.2em;
+  border: 2px solid var(--cvl-red);
+  // border-radius: 2em;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);
+
+  font-size: 1.1em;
   text-decoration: none;
   cursor: pointer;
   transition: 0.3s var(--my-ease-out);

@@ -13,13 +13,18 @@ import thunk from "redux-thunk"
 // modules
 import * as reducers from "./modules/reducers"
 
-const history = createBrowserHistory()
+const history = createBrowserHistory({
+  basename: window.__BASENAME__ || '/',
+})
 const middlewares = [
   routerMiddleware(history),
   thunk,
 ]
 
-const initialState = undefined
+const initialState = {
+  assetsPath: window.__ASSETS__,
+  routes: window.__ROUTES__,
+}
 
 const store = createStore(
   combineReducers({

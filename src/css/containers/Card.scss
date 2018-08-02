@@ -1,0 +1,60 @@
+.Card{
+  font-size: 36rem;
+
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-top: 110%;
+  margin: 0.9em auto;
+
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 50px 0 var(--shadow);
+  overflow: hidden;
+
+  transition: all var(--ease-out-back) 0.4s;
+
+  &:hover{
+    transform-origin: center;
+    width: 88%;
+    padding-top: 107%;
+  }
+
+  .image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 60%;
+  }
+
+  .words{
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    padding: 3% 5%;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
+
+    .word{
+      display: block;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+    .subWords{
+      display: block;
+      font-size: 0.5em;
+      line-height: 2;
+    }
+  }
+}

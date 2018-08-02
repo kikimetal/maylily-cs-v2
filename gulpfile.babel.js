@@ -20,6 +20,7 @@ gulp.task("watch:min", ["js:min", "css:min"], () => {
 })
 // php server
 gulp.task("server", ["php-built-in-server"])
+gulp.task("server:open", ["php-built-in-server:open"])
 // -----------------------------------------------
 
 // js build use webpack in gulp
@@ -57,7 +58,7 @@ import sourcemaps from "gulp-sourcemaps"
 
 const scssPath = [
   "!./src/css/test/**/*",
-  // "./src/css/common/*.scss",
+  "./src/css/common/myreset.scss",
   "./src/css/common/common.scss",
   "./src/css/*.scss",
   "./src/css/**/*.scss",
@@ -116,6 +117,10 @@ gulp.task("php-built-in-server", ["browser-sync"], () => {
   gulp.watch("./public/**/*", ["browser-reload"])
 })
 
+gulp.task("php-built-in-server:open", ["browser-sync:open"], () => {
+  gulp.watch("./public/**/*", ["browser-reload"])
+})
+
 gulp.task("php", () => {
   return php.server({
     base: "public/",
@@ -128,8 +133,16 @@ gulp.task("browser-sync", ["php"], () => {
     proxy: `localhost:${port}`,
     port: port,
     files: ["public/**/*"],
-    // open: "external",
     open: false,
+  })
+})
+
+gulp.task("browser-sync:open", ["php"], () => {
+  return browserSync({
+    proxy: `localhost:${port}`,
+    port: port,
+    files: ["public/**/*"],
+    open: "external",
   })
 })
 
