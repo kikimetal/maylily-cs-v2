@@ -1,40 +1,28 @@
 import React from "react"
 import { connect } from "react-redux"
 import { withRouter, NavLink } from "react-router-dom"
+import urljoin from "url-join"
 
 // container
 // import ConnectedLink from "./ConnectedLink"
 
-class MenuTrigger extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  render(){
-
-    const { page00, page01, page02 } = this.props.routes
-
-    return (
-      <div className={`MenuTrigger ${this.props.mobileMenuContext || this.props.isPageMoving ? "collapse" : ""}`}>
-        <div className="left-item" onClick={this.props.toggleMobileMenu}>
-          <i className="fas fa-bars"></i>
-          <span>MENU</span>
-        </div>
-        {
-          this.props.location.pathname === page00.uri
-            ? <NavLink exact className="right-item" to={page01.uri}><i className="fas fa-chevron-right"></i>{page01.inbound}</NavLink>
-            : this.props.location.pathname === page01.uri
-              ? <NavLink exact className="right-item" to={page02.uri}><i className="fas fa-chevron-right"></i>{page02.inbound}</NavLink>
-              : <NavLink exact className="right-item" to={page00.uri}><i className="fas fa-chevron-right"></i>{page00.inbound}</NavLink>
-        }
-      </div>
-    )
-  }
+const MenuTrigger = props => {
+  const { page00, page01, page02 } = props.routes
+  return(
+    <div
+      className={`MenuTrigger ${props.mobileMenuContext || props.isPageMoving ? "collapse" : ""}`}
+      onClick={props.toggleMobileMenu}
+      >
+      <img src={urljoin(props.assetsPath, "img/bars-sm.svg")} alt="ハンバーガーメニューボタン" />
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({
   isPageMoving: state.isPageMoving,
   mobileMenuContext: state.mobileMenuContext,
   routes: state.routes,
+  assetsPath: state.assetsPath,
 })
 
 import * as action from "../modules/action"

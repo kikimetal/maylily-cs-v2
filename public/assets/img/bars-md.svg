@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 303.157 183.208">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #6dc6d1;
+      }
+
+      .cls-3 {
+        font-size: 21px;
+        font-family: HelveticaNeue-Medium, Helvetica Neue;
+        font-weight: 500;
+        letter-spacing: 0.007em;
+      }
+
+      .cls-4 {
+        filter: url(#長方形_11);
+      }
+    </style>
+    <filter id="長方形_11" x="0" y="0" width="303.157" height="183.208" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#004e57" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="グループ化_33" data-name="グループ化 33" transform="translate(-1593 -174)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 1593, 174)">
+      <rect id="長方形_11-2" data-name="長方形 11" class="cls-1" width="255.157" height="135.208" rx="67.604" transform="translate(24 23)"/>
+    </g>
+    <g id="グループ化_17" data-name="グループ化 17" transform="translate(1672.144 223.295)">
+      <g id="グループ化_13" data-name="グループ化 13" transform="translate(8.953 35.811)">
+        <rect id="長方形_9" data-name="長方形 9" class="cls-2" width="62.67" height="8.953" rx="4.476"/>
+        <path id="パス_22" data-name="パス 22" class="cls-2" d="M4.476,0H58.194a4.476,4.476,0,1,1,0,8.953H4.476A4.476,4.476,0,0,1,4.476,0Z" transform="translate(8.953 22.382)"/>
+      </g>
+      <g id="グループ化_16" data-name="グループ化 16" transform="translate(0 0)">
+        <text id="Menu" class="cls-3" transform="translate(0 20)"><tspan x="0" y="0">Menu</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

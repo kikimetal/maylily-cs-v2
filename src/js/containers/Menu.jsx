@@ -2,70 +2,29 @@ import React from "react"
 import { withRouter, NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 
-// containers
-// import ConnectedLink from "./ConnectedLink"
-import MenuTrigger from "./MenuTrigger"
-
 // components
 import Btn from "../components/Btn"
-// import KikiLogoType from "../components/KikiLogoType"
-// import HeightTransitionToFull from "../components/HeightTransitionToFull"
+// containers
+import MenuTrigger from "./MenuTrigger"
 
-class Menu extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  render(){
+const Menu = props => {
+  const { page00, page01, page02 } = props.routes
+  return (
+    <div className={`Menu ${props.windowSize === "sm" ? "sm" : "md"}`}>
 
-    const { page00, page01, page02 } = this.props.routes
+      <div
+        className={`container ${props.mobileMenuContext ? "show" : "hide"}`}
+        onClick={props.toggleMobileMenu}
+        >
+        <ul className="link-list">
+          <li className="link-list-item"><NavLink exact to={page00.uri}><Btn><i className="fas fa-bug" />{page00.heading.en}</Btn></NavLink></li>
+          <li className="link-list-item"><NavLink exact to={page01.uri}><Btn><i className="fab fa-accusoft" />{page01.heading.en}</Btn></NavLink></li>
+          <li className="link-list-item"><NavLink exact to={page02.uri}><Btn><i className="fas fa-code" />{page02.heading.en}</Btn></NavLink></li>
+        </ul>
+      </div>
 
-    if (this.props.windowSize === "sm") { // sm
-      return (
-        <div className="Menu sm">
-
-          <div className="menu-switch">
-            <MenuTrigger />
-          </div>
-
-          <div
-            className={`container ${this.props.mobileMenuContext ? "show" : "hide"}`}
-            onClick={this.props.toggleMobileMenu}
-            >
-            <ul className="link-list">
-              <li className="link-list-item"><NavLink exact to={page00.uri}><Btn><i className="fas fa-bug" />{page00.heading.en}</Btn></NavLink></li>
-              <li className="link-list-item"><NavLink exact to={page01.uri}><Btn><i className="fab fa-accusoft" />{page01.heading.en}</Btn></NavLink></li>
-              <li className="link-list-item"><NavLink exact to={page02.uri}><Btn><i className="fas fa-code" />{page02.heading.en}</Btn></NavLink></li>
-            </ul>
-          </div>
-
-        </div>
-      )
-    } else { // over md
-      return (
-        <div className="Menu md">
-          <div className="container-left">MAYLILY</div>
-          <div className="container-right">CONTACT</div>
-          <div className="container">
-
-            <ul className="link-list">
-              <li className="link-list-item"><NavLink exact to={page00.uri}><Btn>
-                <i className="fas fa-bug" />
-                {page00.heading.en}
-                </Btn></NavLink></li>
-              <li className="link-list-item"><NavLink exact to={page01.uri}><Btn>
-                <i className="fab fa-accusoft" />
-                {page01.heading.en}
-                </Btn></NavLink></li>
-              <li className="link-list-item"><NavLink exact to={page02.uri}><Btn>
-                <i className="fas fa-code" />
-                {page02.heading.en}
-                </Btn></NavLink></li>
-            </ul>
-          </div>
-        </div>
-      )
-    }
-  }
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({

@@ -11,6 +11,7 @@ import Page00 from "./Page00"
 import Page01 from "./Page01"
 import Page02 from "./Page02"
 import Menu from "./Menu"
+import MenuTrigger from "./MenuTrigger"
 
 // components
 import Btn from "../components/Btn"
@@ -150,11 +151,10 @@ class App extends React.Component{
           </AnimatedSwitch>
         </main>
 
-        <nav className="nav">
-          <Menu/>
-        </nav>
-
+        <Menu/>
+        <MenuTrigger/>
         <MyHelmet />
+
       </div>
     )
   }

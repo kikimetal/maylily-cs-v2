@@ -1,18 +1,18 @@
 .MenuTrigger{
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: -44px;
+  bottom: auto;
 
-  font-size: 16px;
-  width: 92%;
-  height: 56px;
-  padding: 3px;
+  width: 140px;
+  height: auto;
 
-  color: #fafafa;
-  background: linear-gradient(150deg, rgb(25, 195, 149), rgb(37, 114, 215));
-  box-shadow: 0 1px 6px 0 rgba(50, 0, 0, 0.1);
+  color: white;
+  background: transparent;
 
+  user-select: none;
+  cursor: pointer;
   pointer-events: auto;
   overflow: hidden;
   z-index: 9999;
@@ -29,28 +29,11 @@
     filter: blur(6px);
     opacity: 0;
     pointer-events: none;
+    cursor: default;
   } // collapse
 
   &.locked{
     pointer-events: none !important;
-  }
-
-  .left-item,
-  .right-item{
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    background: rgba(60, 196, 255, 0.3);
-    border-radius: 3px;
-  }
-  .left-item{
-    width: calc(44% - 3px);
-  }
-  .right-item{
-    width: 56%;
   }
 
 }
