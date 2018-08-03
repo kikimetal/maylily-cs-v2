@@ -130,7 +130,7 @@ export const getNews = () => {
     // すでにセットされてたら終了
     if (news.status !== "pending") return
 
-    const url = urljoin(assetsPath, "gss-api.php?sheetName=news&date&title&description&img-src&img-alt&link-flg&link-text&link-href")
+    const url = urljoin(assetsPath, "gss-api.php?sheetName=news&date&main-title-01&main-title-02&sub-title&description&img-src&img-alt&link-flg&link-text&link-href")
     fetchJsonAndDispatch(url, "SET_NEWS", dispatch)
   }
 }

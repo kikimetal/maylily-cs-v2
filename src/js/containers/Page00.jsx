@@ -35,7 +35,7 @@ class Page00 extends React.Component{
         </div>
 
         <Heading main="PickUp" sub="ピックアップ" />
-        <NewsCardList />
+        <NewsCardList pickup={2} />
         <Footer />
       </div>
     )

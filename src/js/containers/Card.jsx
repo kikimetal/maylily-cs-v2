@@ -12,7 +12,7 @@ const Card = props => {
 
   const content = (
     <div>
-      <div className="image">
+      <div className="Card-image">
         <LazyLoadImg
           height="100%"
           src={
@@ -22,15 +22,19 @@ const Card = props => {
           position={props.img.position}
           />
         </div>
-        <div className="heading">
-          {props.children
-            ? <span className="word">props.children</span>
-            : typeof props.heading.main === "string"
-            ? <span className="word">{props.heading.main}</span>
-            : props.heading.main.map((word, i) => (
-              <span className="word" key={`card-heading-word-key-${i}`}>{word}</span>
-            ))
-          }
+        <div className="Card-heading">
+          <div className="main-heading">
+            {
+              props.children
+                ? <span className="word">props.children</span>
+                : typeof props.heading.main === "string"
+                  ? <span className="word">{props.heading.main}</span>
+                  : props.heading.main.map((word, i) => {
+                    if (!word) return
+                    return (<span className="word" key={`card-heading-word-key-${i}`}>{word}</span>)
+                  })
+            }
+          </div>
           <span className="sub-heading">{props.heading.sub}</span>
           <img className="arrow" src={urljoin(props.assetsPath, "img/arrow-white-right.png")} />
         </div>
@@ -39,7 +43,7 @@ const Card = props => {
 
   return (
     <div className="Card" onTouchStart={() => {}}>
-      { props.date && <span className="date">{props.date}</span> }
+      { props.date && <span className="Card-date">{props.date}</span> }
       {
         !props.link
           ? content

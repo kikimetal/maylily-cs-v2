@@ -1,13 +1,15 @@
 .App{
   // color
+  --general: #354844;
   --primary: #6DC6D1;
   --secondary: #B7DAA2;
-  --shadow: rgba(0, 78, 87, 0.16);
+  --shadow: rgba(12, 128, 114, 0.22);
   --background: #F6F6F6;
   --heading: #354844;
   --border-radius: 16px;
   --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  // --ease-out-back: cubic-bezier(0.1, 1, 0.91, 1.57);
+  
+  color: var(--general);
 
   transform-origin: center 45vh;
   opacity: 0;
