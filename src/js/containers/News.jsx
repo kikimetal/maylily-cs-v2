@@ -62,14 +62,14 @@ class News extends React.Component{
     const pending = (
       <h2 className="notification pending skeleton-screen-load">
         <span>
-          <q>最新のニュース</q>を読み込んでいます。
+          最新のニュースを読み込んでいます。
         </span>
       </h2>
     )
     const rejected = (
       <h2 className="notification rejected error">
         <span>
-          サーバーへの通信に失敗したため<q>最新のニュース</q>が読み込めませんでした。
+          サーバーへの通信に失敗したためニュースが読み込めませんでした。
         </span>
       </h2>
     )
