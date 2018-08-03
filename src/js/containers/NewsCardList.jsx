@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 // containers
 import Card from "./Card"
 
-class News extends React.Component{
+class NewsCardList extends React.Component{
   constructor(props){
     super(props)
   }
@@ -75,7 +75,7 @@ class News extends React.Component{
     )
 
     return (
-      <div className="News">
+      <div className="NewsCardList">
         {
           status === "fulfilled"
             ? fulfilled
@@ -92,4 +92,4 @@ const mapStateToProps = state => ({
   news: state.news,
 })
 
-export default connect(mapStateToProps)(News)
+export default connect(mapStateToProps)(NewsCardList)
