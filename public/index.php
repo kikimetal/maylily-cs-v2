@@ -62,6 +62,10 @@ if ($this_route !== null) {
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="shortcut icon" href="<?= $assets_url ?>/img/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="<?= $assets_url ?>/img/apple-touch-icon-180x180.png">
+  <!-- favicon -->
+  <link rel="icon" href="<?= $assets_url ?>/img/favicons/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="shortcut icon" href="<?= $assets_url ?>/img/favicons/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?= $assets_url ?>/img/favicons/apple-touch-icon.png">
   <!-- apple-web-app -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
