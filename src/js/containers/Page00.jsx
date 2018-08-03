@@ -21,7 +21,7 @@ class Page00 extends React.Component{
     return(
       <div className="Page00 page">
 
-        <Heading en={heading.en} ja={heading.ja} />
+        <Heading main={heading.en} sub={heading.ja} />
 
         <News />
 

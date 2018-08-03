@@ -10,18 +10,18 @@
   text-align: left;
   color: var(--heading);
 
-  .en{
+  .main{
     font-size: 44rem;
     line-height: 1.1;
     font-weight: bold;
   }
-  .ja{
+  .sub{
     font-size: 20rem;
     line-height: 1.5;
     font-weight: normal;
   }
 
-  .en, .ja{
+  .main, .sub{
     text-transform: uppercase;
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;

@@ -11,7 +11,7 @@ const Page02 = props => {
   return (
     <div className="Page02 page">
 
-      <Heading en={props.page02.heading.en} ja={props.page02.heading.ja} />
+      <Heading main={props.page02.heading.main} sub={props.page02.heading.sub} />
       {console.log(props.service)}
 
       <Footer />
