@@ -71,7 +71,7 @@ const bounceTransitionSm = {
     // translateY: 0,
   },
   atActive: {
-    opacity: bounce(1, {stiffness: 112, damping: 35}),
+    opacity: bounce(1, {stiffness: 112, damping: 42}),
     scale: bounce(1),
     // translateY: bounce(0, {stiffness: 162, damping: 23}),
   },
@@ -135,8 +135,8 @@ class App extends React.Component{
       : bounceTransitionMd
 
     return (
-      <div className="App">
-        <main className={`main ${this.props.windowSize || "noSetWindowSize"}`}>
+      <div className={`App ${this.props.windowSize || "noSetWindowSize"}`}>
+        <main>
           <AnimatedSwitch
             atEnter={bounceTransition.atEnter}
             atLeave={bounceTransition.atLeave}

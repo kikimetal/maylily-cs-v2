@@ -16,18 +16,4 @@
   text-decoration: none;
   cursor: pointer;
   transition: 0.3s var(--my-ease-out);
-
-  @media screen and (min-width: 768px){
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    // TODO: テスト
-    // background: transparent;
-    color: #333;
-    border-color: #444;
-
-    &:hover{
-      background: rgba(240, 240, 240, 1);
-      color: #999;
-    }
-  }
 }

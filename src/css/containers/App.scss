@@ -17,7 +17,7 @@
 
   // ******************** sm: mobile layout ********************
 
-  .main{
+  main{
     position: relative;
     width: 100%;
     // min-height: 100vh;
@@ -32,6 +32,8 @@
         left: 0;
         right: 0;
         bottom: 0;
+
+        transform-origin: center 45vh;
       }
 
       .page{
@@ -42,9 +44,9 @@
   }
 
   // ******************** md middle size layout ********************
-  @media screen and (min-width: 768px){
-
-    main.main{
+  &.md, &.lg, &.xl{
+    main{
+      height: 100vh;
 
       .animated-switch-wrapper {
         position: absolute;

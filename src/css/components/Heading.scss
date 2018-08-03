@@ -6,22 +6,22 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  padding: 0.9em 0.6em 0em;
+  padding: 0.9em 0.5em 0em;
   text-align: left;
   color: var(--heading);
 
-  .main{
+  &-main{
     font-size: 44rem;
     line-height: 1.1;
     font-weight: bold;
   }
-  .sub{
+  &-sub{
     font-size: 20rem;
     line-height: 1.5;
     font-weight: normal;
   }
 
-  .main, .sub{
+  &-main, &-sub{
     text-transform: uppercase;
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;

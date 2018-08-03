@@ -2,8 +2,8 @@ import React from "react"
 
 const Heading = props => (
   <h1 className="Heading">
-    <span className="main">{props.main}</span>
-    <span className="sub">{props.sub}</span>
+    <span className="Heading-main">{props.main}</span>
+    <span className="Heading-sub">{props.sub}</span>
   </h1>
 )
 Heading.defaultProps = {
