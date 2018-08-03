@@ -1,15 +1,16 @@
 .Card{
-  font-size: 36rem;
+  font-size: 32rem;
 
   position: relative;
   width: 90%;
   height: 0;
   padding-top: 110%;
-  margin: 0.9em auto;
+  margin: 1.5em auto;
 
   border-radius: var(--border-radius);
   box-shadow: 0 10px 50px 0 var(--shadow);
-  overflow: hidden;
+  // overflow: hidden;
+  text-decoration: none;
 
   transform-origin: center;
   transition: all ease-out 1s;
@@ -22,6 +23,16 @@
     // padding-top: 114%;
     transform: scale(1.04);
     --opacity: 1;
+  }
+
+  .date{
+    font-size: 0.5em;
+    position: absolute;
+    top: -1.2em;
+    left: 0.7em;
+    text-align: left;
+    letter-spacing: 2px;
+    color: var(--primary);
   }
 
   .image{

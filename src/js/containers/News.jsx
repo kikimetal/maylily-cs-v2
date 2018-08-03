@@ -1,6 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
 
+// containers
+import Card from "./Card"
+
 class News extends React.Component{
   constructor(props){
     super(props)
@@ -15,7 +18,7 @@ class News extends React.Component{
       fulfilled = (
         <div className="news-content">
           {data.map((row, i) => {
-            return (
+            {/*return (
               <section className="news-content-row" key={"news-data-row-" + i}>
                 <div className="date">{row.date}</div>
                 <img
@@ -33,6 +36,23 @@ class News extends React.Component{
                   : null
                 }
               </section>
+            )*/}
+            return (
+              <Card
+                key={"news-data-row-" + i}
+                date={row.date}
+                heading={{
+                  main: [row.title, row.title],
+                  sub: "ようこそメイリリィへ！",
+                }}
+                img={{
+                  src: row["img-src"],
+                  alt: row["img-alt"],
+                  position: "top center",
+                }}
+                link={Number(row["link-flg"]) ? row["link-href"] : null}
+                text={row["description"]}
+              />
             )
           })}
         </div>
