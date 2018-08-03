@@ -126,7 +126,6 @@ const fetchJsonAndDispatch = (fetchUrl, actionTypeString, dispatchFunction) => {
 // get news data
 export const getNews = () => {
   return (dispatch, getState) => {
-    console.log("getNewsIn", getState())
     const { news, assetsPath } = getState()
     // すでにセットされてたら終了
     if (news.status !== "pending") return

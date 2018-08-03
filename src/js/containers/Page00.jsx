@@ -17,7 +17,6 @@ class Page00 extends React.Component{
   }
   render(){
     const heading = this.props.routes.page00.heading
-    console.log(heading)
 
     return(
       <div className="Page00 page">
