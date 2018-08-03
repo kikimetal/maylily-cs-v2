@@ -21,12 +21,22 @@ class Page00 extends React.Component{
     return(
       <div className="Page00 page">
 
+        <div
+          className="HeroImage"
+          style={{
+            display: "flex",
+            flexFlow: "column",
+            justifyContent: "center",
+            width: "100%",
+            height: "100vh",
+            background: "grey",
+          }}>
+          <Heading main="HERO IMAGE" sub="ここにロゴと画像とテキスト" />
+        </div>
+
         <Heading main="PickUp" sub="ピックアップ" />
-
         <NewsCardList />
-
         <Footer />
-
       </div>
     )
   }
