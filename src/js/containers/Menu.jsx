@@ -8,18 +8,23 @@ import Btn from "../components/Btn"
 import MenuTrigger from "./MenuTrigger"
 
 const Menu = props => {
-  const { page00, page01, page02 } = props.routes
+
+  const { page00, page01, page02, page03, page04, page05, page06, page07 } = props.routes
+  const showList = [page00, page01, page02, page03, page04, page05, page06, page07]
+
   return (
     <div className={`Menu ${props.windowSize === "sm" ? "sm" : "md"}`}>
 
       <div
         className={`container ${props.mobileMenuContext ? "show" : "hide"}`}
-        onClick={props.toggleMobileMenu}
-        >
+        onClick={props.toggleMobileMenu}>
+
         <ul className="link-list">
-          <li className="link-list-item"><NavLink exact to={page00.uri}><Btn><i className="fas fa-bug" />{page00.heading.main}</Btn></NavLink></li>
-          <li className="link-list-item"><NavLink exact to={page01.uri}><Btn><i className="fab fa-accusoft" />{page01.heading.main}</Btn></NavLink></li>
-          <li className="link-list-item"><NavLink exact to={page02.uri}><Btn><i className="fas fa-code" />{page02.heading.main}</Btn></NavLink></li>
+          {showList.map((route, i) => (
+            <li className="link-list-item" key={`menu-link-list-item-${i}`}>
+              <NavLink exact to={route.uri}><Btn>{route.heading.main}</Btn></NavLink>
+            </li>
+          ))}
         </ul>
       </div>
 

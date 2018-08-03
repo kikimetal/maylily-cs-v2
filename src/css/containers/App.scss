@@ -8,26 +8,27 @@
   --heading: #354844;
   --border-radius: 16px;
   --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-  color: var(--general);
 
-  transform-origin: center 45vh;
-  opacity: 0;
-  filter: blur(20px);
-  transform: scale(1.1);
-  transition: all ease-out 0.7s;
-  &.app-fade-in{
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
+  color: var(--general);
 
   // ******************** sm: mobile layout ********************
 
   main{
     position: relative;
     width: 100%;
-    // min-height: 100vh;
+    min-height: 100vh;
+
+    // fade-in animation
+    transform-origin: center 45vh;
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(1.1);
+    transition: all ease-out 0.7s;
+    &.main-fade-in{
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
 
     .animated-switch-wrapper {
       position: relative;
