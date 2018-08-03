@@ -10,14 +10,16 @@ const Card = props => {
       <div className="image">
         <LazyLoadImg height="100%" src={urljoin(props.assetsPath, props.imgSrc)} position={props.imgPosition} />
       </div>
-      <div className="words">
+      <div className="heading">
         {props.children
           ? <span className="word">props.children</span>
-          : props.words.map((word, i) => (
-            <span className="word" key={`card-words-word-key-${i}`}>{word}</span>
-          ))
+          : typeof props.heading === "string"
+            ? <span className="word">{props.heading}</span>
+            : props.heading.map((word, i) => (
+              <span className="word" key={`card-heading-word-key-${i}`}>{word}</span>
+            ))
         }
-        <span className="subWords">{props.subWords}</span>
+        <span className="sub-heading">{props.subHeading}</span>
         <img className="arrow" src={urljoin(props.assetsPath, "img/arrow-white-right.png")} />
       </div>
     </div>
@@ -25,11 +27,11 @@ const Card = props => {
 }
 
 Card.defaultProps = {
-  words: [
+  heading: [
     "香りから",
     "生活を豊かに",
   ],
-  subWords: null,
+  subHeading: null,
   imgSrc: "img/dummy.jpg",
   imgPosition: "center",
 }

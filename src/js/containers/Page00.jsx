@@ -23,11 +23,11 @@ class Page00 extends React.Component{
 
         <Heading en={heading.en} ja={heading.ja} />
 
-        <Card words={["Hello,", "from MAYLILY"]} subWords="ようこそメイリリィへ！" imgPosition="top center"></Card>
-        <Card words={["Hello,", "from MAYLILY"]} subWords="ようこそメイリリィへ！"></Card>
-        <Card words={["Hello,", "from MAYLILY"]} subWords="ようこそメイリリィへ！"></Card>
+        <Card heading={["Hello,", "from MAYLILY"]} subHeading="ようこそメイリリィへ！" imgPosition="top center"></Card>
+        <Card heading={["Hello,", "from MAYLILY"]} subHeading="ようこそメイリリィへ！"></Card>
+        <Card heading={["Hello,", "from MAYLILY"]} subHeading="ようこそメイリリィへ！"></Card>
 
-        {/*<News />*/}
+        <News />
 
         <Footer />
 
