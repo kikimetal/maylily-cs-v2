@@ -104,11 +104,17 @@ function mapStyles(styles) {
 }
 
 // loader events
+// let bg = document.getElementById("loader")
+// bg.classList.add("loader-fade-out")
+window.addEventListener("DOMContentLoaded", () => {
+  let app = document.querySelector(".App")
+  app.classList.remove("app-fade-in")
+  console.log(app)
+})
 window.addEventListener("load", () => {
-  // let bg = document.getElementById("loader")
-  // bg.classList.add("loader-fade-out")
   let app = document.querySelector(".App")
   app.classList.add("app-fade-in")
+  console.log(app)
 })
 
 class App extends React.Component{
@@ -117,12 +123,20 @@ class App extends React.Component{
     this.props.setWindowSize()
   }
 
+  // componentWillMount(){
+  //   let app = document.querySelector(".App")
+  //   app.classList.remove("app-fade-in")
+  // }
+
   componentDidMount(){
     window.addEventListener("resize", this.props.setWindowSize)
     this.props.setWindowSize()
     this.props.getNews()
-    this.props.getStory()
+    // this.props.getStory()
     // this.props.getService()
+    // let app = document.querySelector(".App")
+    // console.log(app)
+    // app.classList.add("app-fade-in")
   }
 
   componentWillUnmount(){
@@ -135,14 +149,14 @@ class App extends React.Component{
       : bounceTransitionMd
 
     return (
-      <div className={`App ${this.props.windowSize || "noSetWindowSize"}`}>
+      <div className={`App app-fade-in ${this.props.windowSize || "noSetWindowSize"}`}>
         <main>
           <AnimatedSwitch
             atEnter={bounceTransition.atEnter}
             atLeave={bounceTransition.atLeave}
             atActive={bounceTransition.atActive}
             mapStyles={mapStyles}
-            className={`animated-switch-wrapper ${!this.props.windowSize === "sm" && "fix-height"}`}
+            className={`animated-switch-wrapper`}
           >
             <Route exact path={this.props.routes.page00.uri} component={Page00} />
             <Route exact path={this.props.routes.page01.uri} component={Page01} />
