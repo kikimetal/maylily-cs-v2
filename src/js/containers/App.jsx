@@ -5,17 +5,41 @@ import urljoin from "url-join"
 // router switch transition
 import { spring, AnimatedSwitch } from "react-router-transition"
 
-// containers
-import MyHelmet from "./MyHelmet"
-import Page00 from "./Page00"
-import Page01 from "./Page01"
-import Page02 from "./Page02"
-import Menu from "./Menu"
-import MenuTrigger from "./MenuTrigger"
-
 // components
 import Btn from "../components/Btn"
 import NotFound from "../components/NotFound"
+// containers
+import MyHelmet from "./MyHelmet"
+import Menu from "./Menu"
+import MenuTrigger from "./MenuTrigger"
+// page
+import Page00 from "./Page00"
+import Page01 from "./Page01"
+import Page02 from "./Page02"
+import Page02_00 from "./Page02_00"
+import Page02_01 from "./Page02_01"
+import Page02_02 from "./Page02_02"
+import Page02_03 from "./Page02_03"
+import Page03 from "./Page03"
+import Page04 from "./Page04"
+import Page05 from "./Page05"
+import Page06 from "./Page06"
+import Page07 from "./Page07"
+
+const Pages = [
+  Page00,
+  Page01,
+  Page02,
+  Page02_00,
+  Page02_01,
+  Page02_02,
+  Page02_03,
+  Page03,
+  Page04,
+  Page05,
+  Page06,
+  Page07
+]
 
 // react-router-transition setting
 /**
@@ -34,28 +58,16 @@ function bounce(val, override = {}) {
 }
 // switchRoute animation
 const bounceTransitionBase = {
-  // start in a transparent, upscaled state
   atEnter: {
     opacity: 0,
-    // scale: 1.1,
-    // translateY: 0,
     translateY: 20,
   },
-  // leave in a transparent, downscaled state
   atLeave: {
-    // opacity: bounce(0, {stiffness: 227, damping: 32}),
     opacity: bounce(0, {stiffness: 207, damping: 35}),
-    // scale: 1,
-    // translateY: 0,
     translateY: bounce(-20, {stiffness: 122, damping: 24})
   },
-  // and rest at an opaque, normally-scaled state
   atActive: {
-    // opacity: bounce(1, {stiffness: 182, damping: 25}),
     opacity: bounce(1, {stiffness: 82, damping: 35}),
-    // scale: bounce(1, {stiffness: 210, damping: 33}),
-    // scale: bounce(1),
-    // translateY: 0,
     translateY: bounce(0, {stiffness: 202, damping: 19}),
   },
 }
@@ -63,17 +75,12 @@ const bounceTransitionSm = {
   atEnter: {
     opacity: 0,
     scale: 1.1,
-    // translateY: 46,
   },
   atLeave: {
-    // opacity: bounce(0, {stiffness: 300, damping: 30}),
-    // scale: 1,
-    // translateY: 0,
   },
   atActive: {
     opacity: bounce(1, {stiffness: 112, damping: 42}),
     scale: bounce(1),
-    // translateY: bounce(0, {stiffness: 162, damping: 23}),
   },
 }
 const bounceTransitionMd = bounceTransitionBase
@@ -103,18 +110,14 @@ function mapStyles(styles) {
   }
 }
 
-// loader events
-// let bg = document.getElementById("loader")
-// bg.classList.add("loader-fade-out")
+// 初回のロードだけのフェードインアニメーション効果
 window.addEventListener("DOMContentLoaded", () => {
   let main = document.querySelector("#main")
   main.classList.remove("main-fade-in")
-  // console.log(main)
 })
 window.addEventListener("load", () => {
   let main = document.querySelector("#main")
   main.classList.add("main-fade-in")
-  // console.log(main)
 })
 
 class App extends React.Component{
@@ -148,9 +151,10 @@ class App extends React.Component{
             mapStyles={mapStyles}
             className={`animated-switch-wrapper`}
           >
-            <Route exact path={this.props.routes.page00.uri} component={Page00} />
-            <Route exact path={this.props.routes.page01.uri} component={Page01} />
-            <Route exact path={this.props.routes.page02.uri} component={Page02} />
+            {Object.keys(this.props.routes).map((key, i) => (
+              <Route exact path={this.props.routes[key].uri} component={Pages[i]} key={`route-key-${i}`} />
+
+            ))}
             <Route component={NotFound} />
           </AnimatedSwitch>
         </main>

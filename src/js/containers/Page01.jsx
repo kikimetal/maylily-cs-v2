@@ -17,6 +17,8 @@ const Page01 = props => {
     <div className="Page01 page">
       <Heading main="News Release" sub="ニュースリリース" />
       <NewsCardList />
+
+      <Footer />
     </div>
   )
 }

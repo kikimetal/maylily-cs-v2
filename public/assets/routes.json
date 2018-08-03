@@ -1,5 +1,6 @@
 {
   "page00": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp",
     "uri": "/",
     "title": "有限会社メイリリィ",
@@ -11,6 +12,7 @@
   },
 
   "page01": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/news/",
     "uri": "/news/",
     "title": "ニュース | 有限会社メイリリィ",
@@ -22,6 +24,7 @@
   },
 
   "page02": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/about/",
     "uri": "/about/",
     "title": "企業情報 | 有限会社メイリリィ",
@@ -31,48 +34,53 @@
       "sub": "企業情報"
     }
   },
-  "page02-00": {
+  "page02_00": {
+    "isShowMenu": false,
     "canonical": "https://www.maylily.co.jp/about/00/",
     "uri": "/about/00/",
     "title": "企業理念 | 有限会社メイリリィ",
     "description": "meta description を記述してください！！！",
     "heading": {
-      "main": "About Us",
+      "main": "Vision / Mission",
       "sub": "企業理念"
     }
   },
-  "page02-01": {
+  "page02_01": {
+    "isShowMenu": false,
     "canonical": "https://www.maylily.co.jp/about/01/",
     "uri": "/about/01/",
     "title": "代表挨拶 | 有限会社メイリリィ",
     "description": "meta description を記述してください！！！",
     "heading": {
-      "main": "About Us",
+      "main": "Message",
       "sub": "代表挨拶"
     }
   },
-  "page02-02": {
+  "page02_02": {
+    "isShowMenu": false,
     "canonical": "https://www.maylily.co.jp/about/02/",
     "uri": "/about/02/",
     "title": "会社概要 | 有限会社メイリリィ",
     "description": "meta description を記述してください！！！",
     "heading": {
-      "main": "About Us",
+      "main": "Company Profile",
       "sub": "会社概要"
     }
   },
-  "page02-03": {
+  "page02_03": {
+    "isShowMenu": false,
     "canonical": "https://www.maylily.co.jp/about/03/",
     "uri": "/about/03/",
     "title": "社会貢献活動 | 有限会社メイリリィ",
     "description": "meta description を記述してください！！！",
     "heading": {
-      "main": "About Us",
+      "main": "CSR",
       "sub": "社会貢献活動"
     }
   },
 
   "page03": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/brand/",
     "uri": "/brand/",
     "title": "ブランド事業 | 有限会社メイリリィ",
@@ -83,6 +91,7 @@
     }
   },
   "page04": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/rose/",
     "uri": "/rose/",
     "title": "ローズ原料事業 | 有限会社メイリリィ",
@@ -93,6 +102,7 @@
     }
   },
   "page05": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/oem/",
     "uri": "/oem/",
     "title": "フレグランスOEM事業 | 有限会社メイリリィ",
@@ -103,6 +113,7 @@
     }
   },
   "page06": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/terms-of-use/",
     "uri": "/terms-of-use/",
     "title": "利用規約 | 有限会社メイリリィ",
@@ -113,6 +124,7 @@
     }
   },
   "page07": {
+    "isShowMenu": true,
     "canonical": "https://www.maylily.co.jp/privacy-policy/",
     "uri": "/privacy-policy/",
     "title": "プライバシーポリシー | 有限会社メイリリィ",
@@ -124,6 +136,7 @@
   },
 
   "page404": {
+    "isShowMenu": false,
     "canonical": "https://www.maylily.co.jp/404/",
     "title": "404 | 有限会社メイリリィ",
     "description": "このページは存在しません。",
